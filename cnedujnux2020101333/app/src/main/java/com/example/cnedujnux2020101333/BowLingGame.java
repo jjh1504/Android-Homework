@@ -6,6 +6,6 @@ public class BowLingGame {
 
     }
     public int score() {
-        return 0;
+        return -1;
     }
 }
