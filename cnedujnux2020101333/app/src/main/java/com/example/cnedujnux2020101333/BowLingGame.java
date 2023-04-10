@@ -1,11 +1,11 @@
 package com.example.cnedujnux2020101333;
 
 public class BowLingGame {
-    int score =0;
-    public void roll(int pin) {
-
+    private int  score =0;
+    public void roll(int pins) {
+        score += pins;
     }
     public int score() {
-        return 0;
+        return score;
     }
 }

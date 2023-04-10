@@ -11,49 +11,34 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class BowLingGameUnitTest {
+
+    private BowLingGame game;
+
+    @Before
+    public void setUp() throws Exception {
+        game = new BowLingGame();
+    }
+
     @Test
-    public void test0()
+    public void test0()throws Exception
     {
-        BowLingGame game = new BowLingGame();
-        for (int i=0;i<20;i++)
-        {
-            game.roll(0);
-        }
-        assertEquals(0,game.score());
+        RollForManyTimes(0,20);
+        assertEquals(0, game.score());
 
     }
     @Test
-    public void test1() throws Exception {
-        BowLingGame g = new BowLingGame();
-        for (int i = 0; i < 20; i++)
-            g.roll(1);
-        assertEquals(20, g.score());
+    public void test1() throws Exception
+    {
+        RollForManyTimes(1, 20);
+        assertEquals(20, game.score());
+    }
+    private void RollForManyTimes(int pin, int times) {
+        for (int i=0;i<times;i++)
+        {
+            game.roll(pin);
+        }
     }
 
-//    private BowLingGame game;
-//
-//    @Before
-//    public void setUp() throws Exception {
-//        game = new BowLingGame();
-//    }
-//
-//    @Test
-//    public void test20Zeros()
-//    {
-//        repeatRoll(0, 20);
-//        assertEquals(0, game.score());
-//    }
-//    @Test
-//    public void test20Ones()
-//    {
-//        repeatRoll(1,20);
-//        assertEquals(20,game.score());
-//    }
-//
-//    private void repeatRoll(int pin, int times) {
-//        for(int i=0;i<times;i++)
-//        {
-//            game.roll(pin);
-//        }
-//    }
+
+
 }
