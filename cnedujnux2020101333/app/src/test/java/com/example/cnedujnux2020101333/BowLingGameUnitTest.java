@@ -42,7 +42,7 @@ public class BowLingGameUnitTest {
 
     @Test
     public void testOneStrike() throws Exception {
-        game.roll(10);//strike
+        rollStrike();
         game.roll(4);
         game.roll(5);
         game.roll(1);
@@ -54,6 +54,9 @@ public class BowLingGameUnitTest {
     private void rollSpare() {
         game.roll(5);
         game.roll(5);
+    }
+    private void rollStrike() {
+        game.roll(10);
     }
 
     private void RollForManyTimes(int pin, int times) {
