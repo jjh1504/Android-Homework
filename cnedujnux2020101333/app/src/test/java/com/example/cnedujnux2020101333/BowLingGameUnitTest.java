@@ -32,6 +32,15 @@ public class BowLingGameUnitTest {
         RollForManyTimes(1, 20);
         assertEquals(20, game.score());
     }
+    @Test
+    public void testOneSpare() throws Exception {
+        game.roll(5);
+        game.roll(5); // spare
+        game.roll(8);
+        RollForManyTimes(0,16);
+        assertEquals(26,game.score());
+    }
+
     private void RollForManyTimes(int pin, int times) {
         for (int i=0;i<times;i++)
         {
