@@ -40,6 +40,17 @@ public class BowLingGameUnitTest {
         assertEquals(26,game.score());
     }
 
+    @Test
+    public void testOneStrike() throws Exception {
+        game.roll(10);//strike
+        game.roll(4);
+        game.roll(5);
+        game.roll(1);
+        game.roll(8);
+        RollForManyTimes(0,15);
+        assertEquals(37,game.score());
+    }
+
     private void rollSpare() {
         game.roll(5);
         game.roll(5);
