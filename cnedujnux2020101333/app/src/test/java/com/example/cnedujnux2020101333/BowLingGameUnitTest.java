@@ -53,7 +53,7 @@ public class BowLingGameUnitTest {
 
     @Test
     public void testPerfectGame() throws Exception {
-        RollForManyTimes(12,10);
+        RollForManyTimes(10,20);
         assertEquals(300, game.score());
     }
 
