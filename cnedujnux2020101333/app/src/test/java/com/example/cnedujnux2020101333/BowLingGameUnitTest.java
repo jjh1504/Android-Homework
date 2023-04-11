@@ -51,6 +51,12 @@ public class BowLingGameUnitTest {
         assertEquals(37,game.score());
     }
 
+    @Test
+    public void testPerfectGame() throws Exception {
+        RollForManyTimes(12,10);
+        assertEquals(300, game.score());
+    }
+
     private void rollSpare() {
         game.roll(5);
         game.roll(5);
