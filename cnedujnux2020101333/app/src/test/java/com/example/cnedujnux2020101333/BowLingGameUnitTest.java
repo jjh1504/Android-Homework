@@ -34,11 +34,15 @@ public class BowLingGameUnitTest {
     }
     @Test
     public void testOneSpare() throws Exception {
-        game.roll(5);
-        game.roll(5); // spare
+        rollSpare();
         game.roll(8);
         RollForManyTimes(0,16);
         assertEquals(26,game.score());
+    }
+
+    private void rollSpare() {
+        game.roll(5);
+        game.roll(5);
     }
 
     private void RollForManyTimes(int pin, int times) {
